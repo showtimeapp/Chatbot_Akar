@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  akar-rag:
+    build: .
+    container_name: akar-rag-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Persist the vector index across container restarts
+      - ./storage:/backend/storage
+      # Mount the PDF (read-only)
+      - "./data/Akar website Consolidated.pdf:/backend/data/Akar website Consolidated.pdf:ro"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

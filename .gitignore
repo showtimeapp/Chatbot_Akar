@@ -1,0 +1,54 @@
+# ── Environment ───────────────────────────────────────────────────────────────
+.env
+*.env
+.env.*
+!.env.example
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+wheels/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+myenv/
+.venv/
+env/
+ENV/
+
+# ── Vector store / index (generated, not source) ──────────────────────────────
+storage/
+
+# ── PDF source data (large binary — distribute separately) ───────────────────
+data/
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+# (keep Dockerfile and docker-compose.yml — exclude only runtime artifacts)
+docker-compose.override.yml
+
